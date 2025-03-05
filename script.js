@@ -52,7 +52,7 @@ Computer Wins!`);
             return "computer";
         } else if (humanChoice === computerChoice) {
             alert(`${computerChoice} vs ${humanChoice}
-              Tie!`);
+         Tie!`);
             return "tie";
         }
     } else {
