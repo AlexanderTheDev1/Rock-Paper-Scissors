@@ -4,7 +4,7 @@ console.log("Welcome");
 const rock = "Rock";
 const paper = "Paper";
 const scissors = "Scissors";
-let humanChoice = prompt("Write Rock, Paper, or Scissors");
+let humanChoice = prompt("Write Rock, Paper, or Scissors").toLowerCase();
 let computerChoice;
 let humanScore = 0;
 let computerScore = 0;
@@ -25,39 +25,41 @@ const getComputerChoice = () => {
         return scissors;
     }
 };
-
 const getHumanChoice = () => {
-    humanChoice = humanChoice.toLowerCase();
     computerChoice = getComputerChoice();
     if (humanChoice === rock || humanChoice === paper || humanChoice === scissors) { 
         //PLAYER
         if (humanChoice === rock && computerChoice === scissors) {
             console.log(`${humanChoice} vs ${computerChoice}  : Human Wins!`);
-            humanScore++;
+            return humanScore++;
         } else if (humanChoice === paper && computerChoice === rock) {
             console.log(`${humanChoice} vs ${computerChoice}  : Human Wins!`);
-            humanScore++;
+            return humanScore++;
         } else if (humanChoice === scissors && computerChoice === paper) {
             console.log(`${humanChoice} vs ${computerChoice}  : Human Wins!`);
-            humanScore++;
-            //COMPUTER
+            return humanScore++;
+        //COMPUTER
         } else if (computerChoice === rock && humanChoice === scissors) {
             console.log(`${computerChoice} vs ${humanChoice} : Computer Wins!`);
-            computerScore++;
+            return computerScore++;
         } else if (computerChoice === paper && humanChoice === rock) {
             console.log(`${computerChoice} vs ${humanChoice} : Computer Wins!`);
-            computerScore++;
+            return computerScore++;
         } else if (computerChoice === scissors && humanChoice === paper) {
             console.log(`${computerChoice} vs ${humanChoice} : Computer Wins!`);
-            computerScore++;
+            return computerScore++;
         } else if (humanChoice === computerChoice) {
             console.log(`${computerChoice} vs ${humanChoice}  : Tie!`);
+            return;
         }
     } else {
         console.log("Invalid choice");
     }
 } 
+getHumanChoice();
+console.log(`Human Score: ${humanScore}`);
+console.log(`Computer Score: ${computerScore}`);
+
 
 const playRound = (humanChoice, computerChoice) => {
-
 }
