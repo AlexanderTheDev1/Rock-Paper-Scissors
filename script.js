@@ -1,4 +1,4 @@
-console.log("Welcome");
+alert("Welcome");
 // R,P,S = Rock,Paper,Scissors
 const rock = "rock";
 const paper = "paper";
